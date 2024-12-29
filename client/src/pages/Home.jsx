@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CreateTeam from "../components/CreateTeam";
 import AddMember from "../components/Addmember";
+
 function Home() {
   const [data, setData] = useState([]);
   const [orgClick, setOrgClick] = useState(null);
@@ -17,7 +18,7 @@ function Home() {
     setOrgId(null);
     setTeamId(null);
   };
-  console.log(import.meta.env.VITE_REACT_API_URL);
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -47,18 +48,21 @@ function Home() {
 
   return (
     <>
-      <div className="absolute top-0">
+      <div className="fixed top-0 left-0 right-0 z-50">
         {isModalOpen && modalType === "createTeam" && (
-          <CreateTeam onClose={closeModal} data={orgId} />
+          <div className="flex justify-center items-center min-h-screen bg-black bg-opacity-50">
+            <CreateTeam onClose={closeModal} data={orgId} />
+          </div>
         )}
         {isModalOpen && modalType === "addMembers" && orgId && teamId && (
-          // <></>
-          <AddMember onClose={closeModal} org={orgId} team={teamId} />
+          <div className="flex justify-center items-center min-h-screen bg-black bg-opacity-50">
+            <AddMember onClose={closeModal} org={orgId} team={teamId} />
+          </div>
         )}
       </div>
 
-      <div className="flex flex-col items-center min-h-screen w-full bg-gradient-to-br overflow-y-scroll from-indigo-600 to-purple-600">
-        <div className="flex justify-center px-4 text-white  h-full w-full my-24">
+      <div className="flex flex-col items-center min-h-screen w-full bg-gradient-to-br from-indigo-600 to-purple-600 pt-24 md:pt-32">
+        <div className="flex justify-center px-4 text-white w-full">
           {data.length > 0 ? (
             <ul className="space-y-6 w-full max-w-screen-lg">
               {data.map((org) => (

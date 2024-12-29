@@ -18,11 +18,12 @@ function Home() {
     setOrgId(null);
     setTeamId(null);
   };
-
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await axios.get("http://localhost:3245/api/organization");
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/api/organization`
+        );
         setData(res.data || []);
       } catch (error) {
         console.error("Error fetching data", error);

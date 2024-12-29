@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState, useRef, useCallback } from "react";
 import Webcam from "react-webcam";
 
-// eslint-disable-next-line react/prop-types
 function AddMembers({ onClose, org, team }) {
   const [member, setmember] = useState({
     name: "",

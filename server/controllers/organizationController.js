@@ -30,7 +30,6 @@ const getOrganizations = async (req, res) => {
     const organizations = await organization
       .find()
       .populate({ path: "teams", populate: { path: "members" } });
-    console.log(organizations);
     return res.status(200).json(organizations);
   } catch (error) {
     console.log(error);

@@ -17,11 +17,12 @@ function Home() {
     setOrgId(null);
     setTeamId(null);
   };
+  console.log(import.meta.env.VITE_REACT_API_URL);
   useEffect(() => {
     async function fetchData() {
       try {
         const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/organization`
+          `${import.meta.env.VITE_REACT_API_URL}/api/organization`
         );
         setData(res.data || []);
       } catch (error) {

@@ -8,7 +8,7 @@ function AddOrganizationModal({ onClose }) {
     try {
       e.preventDefault();
       await axios
-        .post(`${import.meta.env.VITE_API_URL}/api/organization`, data)
+        .post(`${import.meta.env.VITE_REACT_API_URL}/api/organization`, data)
         .then(() => alert("Organization is created"));
     } catch (error) {
       console.log(error);

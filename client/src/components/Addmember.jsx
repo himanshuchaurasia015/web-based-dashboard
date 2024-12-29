@@ -57,11 +57,15 @@ function AddMember({ onClose, org, team }) {
     }
 
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/api/member`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        `${import.meta.env.VITE_REACT_API_URL}/api/member`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       alert("Member is created");
     } catch (error) {
       console.error(error);

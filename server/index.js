@@ -9,6 +9,7 @@ const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
 
+app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use("/uploads", express.static("uploads"));
 app.use(cors());
 app.use(express.json());
@@ -16,13 +17,8 @@ app.use("/api/team", teamRoute);
 app.use("/api/member", memberRoute);
 app.use("/api/organization", organizationRoute);
 
-app.get("/", (req, res) => {
-  try {
-    res.send("Hello World!");
-  } catch (error) {
-    console.error("Server error:", error);
-    res.status(500).send("Internal Server Error");
-  }
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 });
 
 app.listen(3245, () => {

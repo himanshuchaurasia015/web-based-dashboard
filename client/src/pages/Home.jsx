@@ -47,15 +47,18 @@ function Home() {
 
   return (
     <>
-      {isModalOpen && modalType === "createTeam" && (
-        <CreateTeam onClose={closeModal} data={orgId} />
-      )}
-      {isModalOpen && modalType === "addMembers" && orgId && teamId && (
-        // <></>
-        <AddMember onClose={closeModal} org={orgId} team={teamId} />
-      )}
-      <div className="flex flex-col items-center min-h-screen w-full bg-gradient-to-br from-indigo-600 to-purple-600 pb-16">
-        <div className="flex justify-center px-4 text-white overflow-y-scroll h-full w-full">
+      <div className="absolute top-0">
+        {isModalOpen && modalType === "createTeam" && (
+          <CreateTeam onClose={closeModal} data={orgId} />
+        )}
+        {isModalOpen && modalType === "addMembers" && orgId && teamId && (
+          // <></>
+          <AddMember onClose={closeModal} org={orgId} team={teamId} />
+        )}
+      </div>
+
+      <div className="flex flex-col items-center min-h-screen w-full bg-gradient-to-br overflow-y-scroll from-indigo-600 to-purple-600">
+        <div className="flex justify-center px-4 text-white  h-full w-full my-24">
           {data.length > 0 ? (
             <ul className="space-y-6 w-full max-w-screen-lg">
               {data.map((org) => (

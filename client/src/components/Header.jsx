@@ -18,7 +18,7 @@ function Header() {
       {isMemberModalOpen && <AddMember onClose={closeMemberModal} />}
       {isTeamModalOpen && <CreateTeam onClose={closeTeamModal} />}
 
-      <header className="flex justify-between items-center w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-400 shadow-lg">
+      <header className="flex fixed justify-between items-center w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-400 shadow-lg">
         <h1 className="text-white text-4xl font-bold tracking-wider">
           Dashboard
         </h1>

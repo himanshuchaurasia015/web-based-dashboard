@@ -80,7 +80,7 @@ function AddMember({ onClose, org, team }) {
   };
 
   return (
-    <div className="flex fixed justify-center items-center w-screen h-screen bg-opacity-50 bg-black">
+    <div className="flex fixed justify-center items-center min-w-full min-h-full bg-opacity-50 bg-black">
       <div className="bg-white bg-opacity-100 px-20 py-10 relative rounded-md hover:border-2 border-green-700 bg-gradient-to-b from-blue-200 to-yellow-500">
         <button
           className="absolute right-5 top-2 text-black font-[700] text-3xl"

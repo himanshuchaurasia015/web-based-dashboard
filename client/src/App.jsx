@@ -15,6 +15,7 @@ function App() {
     <>
       <div className="overflow-x-hidden">
         <Header />
+
         <RouterProvider router={router} />
       </div>
     </>

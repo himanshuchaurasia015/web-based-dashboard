@@ -17,7 +17,12 @@ app.use("/api/member", memberRoute);
 app.use("/api/organization", organizationRoute);
 
 app.get("/", (req, res) => {
-  return res.send("<h1>welcome</h1>");
+  try {
+    res.send("Hello World!");
+  } catch (error) {
+    console.error("Server error:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 app.listen(3245, () => {

@@ -8,6 +8,7 @@ const teamRoute = require("./routes/teamRoutes.js");
 const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
+const port = process.env.PORT;
 
 // app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use("/uploads", express.static("uploads"));
@@ -21,6 +22,6 @@ app.use("/api/organization", organizationRoute);
 //   res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 // });
 
-app.listen(3245, () => {
-  console.log("server is listening at", 3245);
+app.listen(port, () => {
+  console.log("server is listening at", port);
 });

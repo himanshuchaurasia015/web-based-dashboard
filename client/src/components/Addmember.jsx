@@ -57,7 +57,7 @@ function AddMember({ onClose, org, team }) {
     }
 
     try {
-      await axios.post("http://localhost:3245/api/member", formData, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/member`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

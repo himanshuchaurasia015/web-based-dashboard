@@ -1,7 +1,7 @@
 import { useState } from "react";
-import AddOrganizationModal from "./AddOrganizationModal";
-import AddMembers from "./AddMembers";
-import CreateTeam from "./CreateTeam";
+import AddOrganizationModal from "./AddOrganizationModal.jsx";
+import AddMembers from "./AddMembers.jsx";
+import CreateTeam from "./CreateTeam.jsx";
 
 function Header() {
   const [isModalOpen, setModal] = useState(false);

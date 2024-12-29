@@ -66,6 +66,12 @@ function AddMember({ onClose, org, team }) {
           },
         }
       );
+      setmember({
+        name: "",
+        email: "",
+        // team: "",
+        // organization: "",
+      });
       alert("Member is created");
     } catch (error) {
       console.error(error);

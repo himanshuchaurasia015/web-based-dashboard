@@ -10,6 +10,7 @@ function AddOrganizationModal({ onClose }) {
       await axios
         .post(`${import.meta.env.VITE_REACT_API_URL}/api/organization`, data)
         .then(() => alert("Organization is created"));
+      setData({ name: "", location: "", email: "" });
     } catch (error) {
       console.log(error);
       alert("something went wrong", error.message);

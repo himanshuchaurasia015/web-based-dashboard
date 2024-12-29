@@ -17,6 +17,11 @@ function CreateTeam({ onClose, data }) {
       await axios
         .post(`${import.meta.env.VITE_REACT_API_URL}/api/team`, Team)
         .then(() => alert("Team is created"));
+      setTeam({
+        name: "",
+        description: "",
+        // organization: "",
+      });
     } catch (error) {
       console.log(error);
       alert("something went wrong", error.message);

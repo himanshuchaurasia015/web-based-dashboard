@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useRef, useCallback } from "react";
 import Webcam from "react-webcam";
 
-function AddMembers({ onClose, org, team }) {
+function AddMember({ onClose, org, team }) {
   const [member, setmember] = useState({
     name: "",
     email: "",
@@ -167,4 +167,4 @@ function AddMembers({ onClose, org, team }) {
   );
 }
 
-export default AddMembers;
+export default AddMember;

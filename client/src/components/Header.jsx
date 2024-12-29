@@ -1,8 +1,8 @@
 import { useState } from "react";
 import AddOrganizationModal from "./AddOrganizationModal.jsx";
-// import AddMembers from "./AddMembers.jsx";
 import CreateTeam from "./CreateTeam.jsx";
-
+import AddMember from "./Addmember.jsx";
+AddMember;
 function Header() {
   const [isModalOpen, setModal] = useState(false);
   const [isMemberModalOpen, setMemberModal] = useState(false);
@@ -15,7 +15,7 @@ function Header() {
   return (
     <>
       {isModalOpen && <AddOrganizationModal onClose={closeModal} />}
-      {/* {isMemberModalOpen && <AddMembers onClose={closeMemberModal} />} */}
+      {isMemberModalOpen && <AddMember onClose={closeMemberModal} />}
       {isTeamModalOpen && <CreateTeam onClose={closeTeamModal} />}
 
       <header className="flex justify-between items-center w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-400 shadow-lg">

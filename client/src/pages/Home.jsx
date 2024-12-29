@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CreateTeam from "../components/CreateTeam";
-// import AddMembers from "../components/AddMembers";
-
+import AddMember from "../components/Addmember";
 function Home() {
   const [data, setData] = useState([]);
   const [orgClick, setOrgClick] = useState(null);
@@ -51,8 +50,8 @@ function Home() {
         <CreateTeam onClose={closeModal} data={orgId} />
       )}
       {isModalOpen && modalType === "addMembers" && orgId && teamId && (
-        <></>
-        // <AddMembers onClose={closeModal} org={orgId} team={teamId} />
+        // <></>
+        <AddMember onClose={closeModal} org={orgId} team={teamId} />
       )}
       <div className="flex flex-col items-center min-h-screen w-full bg-gradient-to-br from-indigo-600 to-purple-600 pb-16">
         <div className="flex justify-center px-4 text-white overflow-y-scroll h-full w-full">
